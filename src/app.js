@@ -1,8 +1,8 @@
 import express from "express";
 
 // Importación de enrutadores
-import routerCarts from "./routes/carts.router.js";
-import routerProducts from "./routes/products.router.js";
+import routerCarts from "./routes/cart.router.js";
+import routerProducts from "./routes/product.router.js";
 
 // Se crea una instancia de la aplicación Express
 const app = express();
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Declaración de rutas
-app.use('/api/carts', routerCarts);
-app.use('/api/products', routerProducts);
+app.use("/api/carts", routerCarts);
+app.use("/api/products", routerProducts);
 
 // Se levanta el servidor oyendo en el puerto definido
 app.listen(PORT, () => {
